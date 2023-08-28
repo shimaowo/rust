@@ -211,7 +211,7 @@ pub fn always_abort() {
 /// The configuration for whether and how the default panic hook will capture
 /// and display the backtrace.
 #[derive(Debug, Copy, Clone, PartialEq, Eq)]
-#[unstable(feature = "panic_backtrace_config", issue = "93346")]
+#[stable(feature = "panic_backtrace_config", since = "CURRENT_RUSTC_VERSION")]
 #[non_exhaustive]
 pub enum BacktraceStyle {
     /// Prints a terser backtrace which ideally only contains relevant
@@ -258,7 +258,7 @@ static SHOULD_CAPTURE: AtomicUsize = AtomicUsize::new(0);
 ///
 /// The default value for this setting may be set by the `RUST_BACKTRACE`
 /// environment variable; see the details in [`get_backtrace_style`].
-#[unstable(feature = "panic_backtrace_config", issue = "93346")]
+#[stable(feature = "panic_backtrace_config", since = "CURRENT_RUSTC_VERSION")]
 pub fn set_backtrace_style(style: BacktraceStyle) {
     if !cfg!(feature = "backtrace") {
         // If the `backtrace` feature of this crate isn't enabled, skip setting.
@@ -288,7 +288,7 @@ pub fn set_backtrace_style(style: BacktraceStyle) {
 ///   the future
 ///
 /// Returns `None` if backtraces aren't currently supported.
-#[unstable(feature = "panic_backtrace_config", issue = "93346")]
+#[stable(feature = "panic_backtrace_config", since = "CURRENT_RUSTC_VERSION")]
 pub fn get_backtrace_style() -> Option<BacktraceStyle> {
     if !cfg!(feature = "backtrace") {
         // If the `backtrace` feature of this crate isn't enabled quickly return

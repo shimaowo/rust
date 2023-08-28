@@ -19,8 +19,6 @@
 // [legacy] compile-flags: -Zunstable-options -Csymbol-mangling-version=legacy
 //     [v0] compile-flags: -Csymbol-mangling-version=v0
 
-#![feature(panic_backtrace_config)]
-
 fn main() {
     std::panic::set_backtrace_style(std::panic::BacktraceStyle::Short);
     panic!()
