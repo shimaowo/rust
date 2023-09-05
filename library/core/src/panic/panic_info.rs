@@ -89,7 +89,7 @@ impl<'a> PanicInfo<'a> {
     /// was used with a formatting string and some additional arguments,
     /// returns that message ready to be used for example with [`fmt::write`]
     #[must_use]
-    #[unstable(feature = "panic_info_message", issue = "66745")]
+    #[stable(feature = "panic_info_message", since = "CURRENT_RUSTC_VERSION")]
     pub fn message(&self) -> Option<&fmt::Arguments<'_>> {
         self.message
     }
